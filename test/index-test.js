@@ -8,8 +8,6 @@ describe('index', () => {
   const html = '<div></div>'
   const src = path.resolve(__dirname, '..', 'index.js')
 
-console.error("HALP!")
-
   it('calls console.error()', done => {
     const spy = expect.spyOn(console, 'error').andCallThrough()
 
@@ -36,7 +34,7 @@ console.error("HALP!")
 
   it('calls console.warn()', done => {
     const spy = expect.spyOn(console, 'warn').andCallThrough()
-
+    console.error("HALP!")
     jsdom.env(html, [src], {
       virtualConsole: jsdom.createVirtualConsole().sendTo(console)
     }, (err, window) => {
