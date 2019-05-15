@@ -10,7 +10,6 @@ describe('index', () => {
   const src = path.resolve(__dirname, '..', 'index.js')
 
   it('calls console.error()', done => {
-    console.error("HALP!")
     const spy = expect.spyOn(console, 'error').andCallThrough()
 
     jsdom.env(html, [src], {
